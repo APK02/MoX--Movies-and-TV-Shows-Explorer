@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /MoX-Project/src/api/
+
+RewriteRule ^auth$ controllers/AuthController.php [QSA,L]
+
+RewriteRule ^preferences$ controllers/PreferencesController.php [QSA,L]
+
+RewriteRule ^help$ controllers/HelpController.php [QSA,L]
+
+RewriteRule ^profile$ controllers/ProfileController.php [QSA,L]
+
+RewriteRule ^register$ controllers/RegisterController.php [QSA,L]
+
+RewriteRule ^resetPassword$ controllers/ResetPasswordController.php [QSA,L]
+
+RewriteRule ^dash$ controllers/DashboardController.php [QSA,L]

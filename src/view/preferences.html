@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="../scripts/toastify.js"></script>
+    <script src="../scripts/showToastMessage.js"></script>
+    <link rel="stylesheet" href="../styles/toastify/toastify.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/preferences/preferences.css" />
+    <title>Preferences</title>
+    <script>
+      let cookie = document.cookie;
+      if (cookie.indexOf("token") === -1 && cookie.indexOf("userId") === -1) {
+        window.location.replace("http://localhost/MoX-Project/src/view/restricted.html");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="preferences-page">
+      <div class="preferences-page__image-container">
+        <img class="preferences-page__image" src="../assets/formImg.png" alt="preferences" />
+        <div class="preferences-page__tagline">
+          <h2 class="preferences-page__tagline-subtitle">The all in one movies platform</h2>
+          <h1 class="preferences-page__tagline-title">MOX MOVIES</h1>
+        </div>
+      </div>
+      <div class="preferences-page__form-container">
+        <div class="preferences-page__form" id="preferences-page__form">
+          <h2 class="preferences-page__form-title">MoX Movies</h2>
+          <p class="preferences-page__form-description">Choose your watching preferences</p>
+          <form class="preferences-form" id="preferences-form">
+            <div class="preferences-form__label">Most common</div>
+            <div class="preferences-buttons__container">
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="action">Action</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="comedy">Comedy</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="thriller">Thriller</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="fantasy">Fantasy</button>
+            </div>
+            <div class="preferences-form__label">Others</div>
+            <div class="preferences-buttons__container">
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="romance">Romance</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="documentary">Documentary</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="animation">Animation</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="science_fiction">Science fiction</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="mistery">Mystery</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="drama">Drama</button>
+              <button class="preferences-button" type="button" onClick="buttonOnClick(this)" value="horror">Horror</button>
+            </div>
+            <button type="submit" class="preferences-form__submit-button" onClick="handleSubmit()" id="submit-button">Continue</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/preferences.js"></script>
+  </body>
+</html>

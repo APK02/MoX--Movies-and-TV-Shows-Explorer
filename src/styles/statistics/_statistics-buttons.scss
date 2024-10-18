@@ -1,0 +1,56 @@
+@use "../theme";
+
+.statistics__container__export-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 385px) {
+    gap: 10px;
+  }
+}
+
+.statistics__container__export-button {
+  display: flex;
+  width: fit-content;
+  height: 30px;
+  padding: 0px 8px;
+  justify-content: center;
+  align-items: center;
+  color: theme.color("whitePure");
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: theme.color("grayLight");
+  backdrop-filter: blur(60px);
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 385px) {
+    padding: 0px 4px;
+  }
+}
+
+.statistics__container__export-button:hover {
+  background: theme.color("blueLight");
+}
+
+.statistics__header-back_button {
+  display: flex;
+  width: 60px;
+  height: 30px;
+  padding: 0px 8px;
+  justify-content: center;
+  align-items: center;
+  color: theme.color("whitePure");
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: theme.color("grayLight");
+  backdrop-filter: blur(60px);
+  border: none;
+  cursor: pointer;
+}
+
+.statistics__header-back_button:hover {
+  background: gray;
+}

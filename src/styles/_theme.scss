@@ -1,0 +1,15 @@
+$colors: (
+  main-background-color: linear-gradient(159deg, #0f123b 14.25%, #090d2e 56.45%, #020515 86.14%),
+  components-background-color: linear-gradient(112deg, rgba(6, 11, 38, 0.75) 59.3%, rgba(26, 31, 55, 0) 100%),
+  grayLight: #a0aec0,
+  blueLight: #0075ff,
+  redLight: #dc3545,
+  orangeLight: #ffc107,
+  whitePure: #ffffff,
+  dark: #000000,
+  logo: linear-gradient(95deg, #fff 79.99%, #21242f 105.65%),
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}

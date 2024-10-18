@@ -1,0 +1,23 @@
+@use "../theme";
+
+.register-form__submit-button {
+  display: flex;
+  width: 350px;
+  height: 44.96px;
+  padding: 0px 8px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: theme.color("blueLight");
+  backdrop-filter: blur(60px);
+  color: theme.color("whitePure");
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.register-form__submit-button:hover,
+.register-form__submit-button:focus {
+  background-color: #0056b3;
+}

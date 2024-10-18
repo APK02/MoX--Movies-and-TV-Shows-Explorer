@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../scripts/toastify.js"></script>
+    <script src="../scripts/showToastMessage.js"></script>
+    <link rel="stylesheet" href="../styles/toastify/toastify.css" />
+    <link rel="stylesheet" href="../styles/help/help.css" />
+    <title>Help</title>
+  </head>
+  <body>
+    <img src="../assets/background.png" alt="background" class="help__background" />
+    <div class="help">
+      <div class="help__left_sidebar">
+        <div class="help__left_sidebar__logo">
+          <h1 class="help__left_sidebar__logo-title">MOX MOVIES</h1>
+        </div>
+        <div class="help__left_sidebar__line">
+          <img src="../assets/line.svg" alt="line" class="help__left_sidebar__line" />
+        </div>
+        <div class="help__left_sidebar__menu">
+          <div class="help__left_sidebar__menu-list">
+            <div class="help__left_sidebar__menu-list-item-wrapper">
+              <div class="help__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/home.svg" alt="help" class="help__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="help__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/dashboard.html')">Dashboard</div>
+            </div>
+            <div class="help__left_sidebar__menu-list-item-wrapper">
+              <div class="help__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/profile.svg" alt="help" class="help__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="help__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/profile.html')">Profile</div>
+            </div>
+            <div class="help__left_sidebar__menu-list-item-wrapper">
+              <div class="help__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/info.svg" alt="help" class="help__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="help__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/about-us.html')">About us</div>
+            </div>
+            <div class="help__left_sidebar__menu-list-item-wrapper">
+              <div class="help__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/help.svg" alt="help" class="help__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="help__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/help.html')">Help</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()">
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+      </button>
+      <div class="menu-modal" id="menuModal">
+        <div class="help__modal__logo">
+          <h1 class="help__modal__logo-title">MOX MOVIES</h1>
+        </div>
+        <div class="help__modal__line">
+          <img src="../assets/line.svg" alt="line" class="help__modal__line" />
+        </div>
+        <nav class="menu-modal__content">
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/dashboard.html')">Dashboard</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/profile.html')">Profile</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/about-us.html')">About us</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/help.html')">Help</a>
+        </nav>
+      </div>
+      <div class="help__center">
+        <div class="help__contact">
+          <h2 class="help__contact__title">Contact us</h2>
+          <p class="help__contact__description">Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+          <form method="post" class="help__contact__form" id="help-form">
+            <label for="help-topic" class="help__contact__form-label">What can we help you with?</label>
+            <div class="help__contact__form__input-wrapper">
+              <select id="help-topic" name="help-topic" class="help__contact__form-select">
+                <option class="help__contact__form-select-option" value="">Select what we can help you with</option>
+                <option class="help__contact__form-select-option" value="account">Account Issues</option>
+                <option class="help__contact__form-select-option" value="technical">Technical Support</option>
+                <option class="help__contact__form-select-option" value="general">General Inquiry</option>
+              </select>
+            </div>
+            <label for="name" class="help__contact__form-label">Username</label>
+            <div class="help__contact__form__input-wrapper">
+              <input type="text" id="name" name="name" class="help__contact__form-input" placeholder="Your username" required />
+            </div>
+            <label for="email" class="help__contact__form-label">Email</label>
+            <div class="help__contact__form__input-wrapper">
+              <input type="email" id="email" name="email" class="help__contact__form-input" placeholder="Your email adress" required />
+            </div>
+            <label for="message" class="help__contact__form-label">Message</label>
+            <div class="help__contact__form__textarea-wrapper">
+              <textarea id="message" name="message" class="help__contact__form-textarea" placeholder="Your message" required></textarea>
+            </div>
+            <button type="submit" class="help__contact-form__submit-button">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/help.js"></script>
+  </body>
+</html>

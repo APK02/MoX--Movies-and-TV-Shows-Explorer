@@ -1,0 +1,201 @@
+@use "../theme";
+
+.help__center {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.help__contact {
+  border-radius: 20px;
+  background: theme.color("components-background-color");
+  backdrop-filter: blur(60px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-width: 311px;
+  max-width: 450px;
+  height: fit-content;
+  max-height: calc(100% - 24px);
+  margin: 20px;
+
+  @media (max-width: 580px) {
+    margin-top: 90px;
+  }
+}
+
+.help__contact__title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 2.52px;
+  background: linear-gradient(95deg, #fff 79.99%, #21242f 105.65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.help__contact__description {
+  width: 100%;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 1px;
+  color: theme.color("whitePure");
+  text-align: center;
+}
+
+.help__contact__form {
+  width: 100%;
+  height: 100%;
+}
+
+.help__contact__form-label {
+  color: theme.color("whitePure");
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 1px;
+  padding-left: 12px;
+}
+
+.help__contact__form-input {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: text;
+  caret-color: theme.color("grayLight");
+  color: theme.color("whitePure");
+  ::placeholder {
+    color: theme.color("whitePure");
+  }
+
+  @media (max-width: 500px) {
+    max-width: 311px;
+  }
+}
+
+.help__contact__form-input::placeholder {
+  color: theme.color("whitePure");
+  transition: color 0.3s ease;
+}
+
+.help__contact__form-input:focus::placeholder {
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.help__contact__form__input-wrapper {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  padding: 0px 20px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid theme.color("grayLight");
+  margin: 4px 0 12px 0;
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) -3.91%, rgba(255, 255, 255, 0.04) 75.27%);
+  backdrop-filter: blur(21px);
+}
+
+.help__contact-form__submit-button {
+  display: flex;
+  width: 76px;
+  height: 40px;
+  padding: 0px 8px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: gray;
+  backdrop-filter: blur(60px);
+  color: theme.color("whitePure");
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.help__contact-form__submit-button:hover,
+.help__contact-form__submit-button:focus {
+  background-color: theme.color("grayLight");
+}
+
+.help__contact__form-textarea {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: text;
+  caret-color: theme.color("grayLight");
+  color: theme.color("whitePure");
+  ::placeholder {
+    color: theme.color("whitePure");
+  }
+  resize: none;
+}
+
+.help__contact__form-textarea::placeholder {
+  color: theme.color("whitePure");
+}
+
+.help__contact__form-textarea:focus::placeholder {
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+.help__contact__form__textarea-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  padding: 10px 20px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid theme.color("grayLight");
+  margin: 4px 0 12px 0;
+  background: linear-gradient(117deg, rgba(255, 255, 255, 0) -3.91%, rgba(255, 255, 255, 0.04) 75.27%);
+  backdrop-filter: blur(21px);
+}
+
+.help__contact__form-select {
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 16px;
+  color: theme.color("whitePure");
+  width: 100%;
+  font-size: 14px;
+}
+
+.help__contact__form-select:focus {
+  outline: none;
+}
+
+.help__contact__form-select-option {
+  border-radius: 20px;
+  background: theme.color("components-background-color");
+  backdrop-filter: blur(60px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

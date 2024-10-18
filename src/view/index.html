@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/index/index.css" />
+    <title>Start</title>
+    <script>
+      let cookie = document.cookie;
+      if (cookie.indexOf("token") !== -1) {
+        window.location.replace("http://localhost/MoX-Project/src/view/dashboard.html");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="start-page">
+      <div class="start-page__image-container">
+        <img class="start-page__image" src="../assets/formImg.png" alt="start" />
+        <div class="start-page__tagline">
+          <div class="start-page__tagline-subtitle">The all in one movies platform</div>
+          <h1 class="start-page__tagline-title">MOX MOVIES</h1>
+        </div>
+      </div>
+      <div class="start-page__action-container">
+        <div class="start-page__action">
+          <h2 class="start-page__action-title">Welcome!</h2>
+          <button type="button" class="start-page__action-button" id="connectBtn">LOG IN</button>
+          <p class="start-page__action-divider">or</p>
+          <button type="button" class="start-page__action-button" id="createBtn">SIGN UP</button>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/index.js"></script>
+  </body>
+</html>

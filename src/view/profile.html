@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/profile/profile.css" />
+    <title>Profile</title>
+    <script>
+      let cookie = document.cookie;
+      if (cookie.indexOf("token") === -1) {
+        window.location.replace("http://localhost/MoX-Project/src/view/restricted.html");
+      }
+    </script>
+    <script src="../scripts/parseJwt.js"></script>
+  </head>
+  <body>
+    <img src="../assets/background.png" alt="background" class="profile__background" />
+    <div class="profile">
+      <div class="profile__left_sidebar">
+        <div class="profile__left_sidebar__logo">
+          <h1 class="profile__left_sidebar__logo-title">MOX MOVIES</h1>
+        </div>
+        <div class="profile__left_sidebar__line">
+          <img src="../assets/line.svg" alt="line" class="profile__left_sidebar__line" />
+        </div>
+        <div class="profile__left_sidebar__menu">
+          <div class="profile__left_sidebar__menu-list">
+            <div class="profile__left_sidebar__menu-list-item-wrapper">
+              <div class="profile__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/home.svg" alt="profile" class="profile__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="profile__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/dashboard.html')">Dashboard</div>
+            </div>
+            <div class="profile__left_sidebar__menu-list-item-wrapper">
+              <div class="profile__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/profile.svg" alt="profile" class="profile__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="profile__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/profile.html')">Profile</div>
+            </div>
+            <div class="profile__left_sidebar__menu-list-item-wrapper">
+              <div class="profile__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/info.svg" alt="profile" class="profile__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="profile__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/about-us.html')">About us</div>
+            </div>
+            <div class="profile__left_sidebar__menu-list-item-wrapper">
+              <div class="profile__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/profile.svg" alt="profile" class="profile__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="profile__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/help.html')">Help</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()">
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+      </button>
+      <div class="menu-modal" id="menuModal">
+        <div class="profile__modal__logo">
+          <h1 class="profile__modal__logo-title">MOX MOVIES</h1>
+        </div>
+        <div class="profile__modal__line">
+          <img src="../assets/line.svg" alt="line" class="profile__modal__line" />
+        </div>
+        <nav class="menu-modal__content">
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/dashboard.html')">Dashboard</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/profile.html')">Profile</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/about-us.html')">About us</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/help.html')">Help</a>
+        </nav>
+      </div>
+      <div class="profile__center">
+        <div class="profile__settings">
+          <h2 class="profile__title">Profile settings</h2>
+          <form method="post" class="profile__form">
+            <label for="name" class="profile__form-label">Username</label>
+            <div class="profile__form__input-wrapper">
+              <input type="text" id="username" name="name" class="profile__form-input" />
+            </div>
+            <label for="email" class="profile__form-label">Email</label>
+            <div class="profile__form__input-wrapper">
+              <input type="email" id="email" name="email" class="profile__form-input" />
+            </div>
+            <p class="profile__form-label">Favourite Genres</p>
+            <div id="favourite_genres" class="favourite_genres"></div>
+            <div class="profile__buttons-wrapper">
+              <button type="button" class="profile-form__submit-button" onclick="save()">Save</button>
+              <button type="button" class="profile-form__submit-button" onclick="redirectToResetPassword()">Change Password</button>
+              <button type="button" class="profile-form__submit-button" onclick="window.location.replace('http://localhost/MoX-Project/src/view/preferences.html')">
+                Change Preferences
+              </button>
+              <button type="button" class="profile-form__submit-button" onclick="logout()">Logout</button>
+              <button type="button" class="profile-form__submit-button" onclick="deleteAccount()">Delete Account</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/profile.js"></script>
+    <script>
+      getEmail();
+      getUsername();
+      getFavGenres();
+    </script>
+  </body>
+</html>

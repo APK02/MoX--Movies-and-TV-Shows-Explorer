@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="../scripts/toastify.js"></script>
+    <script src="../scripts/showToastMessage.js"></script>
+    <link rel="stylesheet" href="../styles/toastify/toastify.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/login/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-page__image-container">
+        <img class="login-page__image" src="../assets/formImg.png" alt="login" />
+        <div class="login-page__tagline">
+          <h2 class="login-page__tagline-subtitle">The all in one movies platform</h2>
+          <h1 class="login-page__tagline-title">MOX MOVIES</h1>
+        </div>
+      </div>
+      <div class="login-page__form-container">
+        <div class="login-page__form" id="login-page__form">
+          <h2 class="login-page__form-title">Nice to see you!</h2>
+          <p class="login-page__form-description">Enter your username and password to sign in</p>
+          <form class="login-form" id="login-form">
+            <label for="username" class="login-form__label">Username</label>
+            <div class="login-form__input-wrapper">
+              <input type="username" id="username" name="username" required placeholder="Your username address" class="login-form__input" />
+            </div>
+            <label for="password" class="login-form__label">Password</label>
+            <div class="login-form__input-wrapper">
+              <input type="password" id="password" name="password" required placeholder="Your password" class="login-form__input" />
+            </div>
+            <div class="login-form__remember-me">
+              <label class="switch">
+                <input type="checkbox" class="switch__input" />
+                <span class="switch__slider"></span>
+              </label>
+              <label class="login-form__checkbox-label">Remember me</label>
+            </div>
+            <button type="submit" class="login-form__submit-button" onClick="handleLogin()">SIGN IN</button>
+            <p class="login-form__signup-text">
+              Don’t have an account? <a onclick="window.location.replace('http://localhost/MoX-Project/src/view/register.html')" class="login-form__signup-link">Sign up</a>
+            </p>
+            <p class="login-form__signup-text">
+              Forgot your password? <a onclick="window.location.replace('http://localhost/MoX-Project/src/view/reset-password.html')" class="login-form__signup-link">Reset it</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/login.js"></script>
+  </body>
+</html>

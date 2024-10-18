@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="../scripts/toastify.js"></script>
+    <script src="../scripts/showToastMessage.js"></script>
+    <link rel="stylesheet" href="../styles/toastify/toastify.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/register/register.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="register-page">
+      <div class="register-page__image-container">
+        <img class="register-page__image" src="../assets/formImg.png" alt="register" />
+        <div class="register-page__tagline">
+          <h2 class="register-page__tagline-subtitle">The all in one movies platform</h2>
+          <h1 class="register-page__tagline-title">MOX MOVIES</h1>
+        </div>
+      </div>
+      <div class="register-page__form-container">
+        <div class="register-page__form">
+          <h2 class="register-page__form-title">Nice to see you!</h2>
+          <p class="register-page__form-description">Enter your details to register</p>
+          <form class="register-form" id="registerForm">
+            <label for="email" class="register-form__label">Email</label>
+            <div class="register-form__input-wrapper">
+              <input type="email" id="email" name="email" required placeholder="Your email address" class="register-form__input" />
+            </div>
+            <label for="username" class="register-form__label">Username</label>
+            <div class="register-form__input-wrapper">
+              <input type="text" id="username" name="username" required placeholder="Choose a username" class="register-form__input" />
+            </div>
+            <label for="password" class="register-form__label">Password</label>
+            <div class="register-form__input-wrapper">
+              <input type="password" id="password" name="password" required placeholder="Your password" class="register-form__input" />
+            </div>
+            <label for="password" class="register-form__label">Confirm Password</label>
+            <div class="register-form__input-wrapper">
+              <input type="password" id="confirm-password" name="password" required placeholder="Confirm your password" class="register-form__input" />
+            </div>
+            <button type="submit" class="register-form__submit-button" onclick="handleRegister()">Register</button>
+            <p class="register-form__login-text">
+              Already have an account? <a onclick="window.location.replace('http://localhost/MoX-Project/src/view/login.html')" class="register-form__login-link">Log In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/register.js"></script>
+  </body>
+</html>

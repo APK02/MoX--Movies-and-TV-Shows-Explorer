@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/dashboard/dashboard.css" />
+    <title>Dashboard</title>
+    <script>
+      let cookie = document.cookie;
+      if (cookie.indexOf("token") === -1) {
+        window.location.replace("http://localhost/MoX-Project/src/view/restricted.html");
+      }
+    </script>
+  </head>
+  <body>
+    <img src="../assets/background.png" alt="background" class="dashboard__background" />
+    <div class="dashboard">
+      <div class="dashboard__left_sidebar">
+        <div class="dashboard__left_sidebar__logo">
+          <h1 class="dashboard__left_sidebar__logo-title">MOX MOVIES</h1>
+        </div>
+        <div class="dashboard__left_sidebar__line">
+          <img src="../assets/line.svg" alt="line" class="dashboard__left_sidebar__line" />
+        </div>
+        <div class="dashboard__left_sidebar__menu">
+          <div class="dashboard__left_sidebar__menu-list">
+            <div class="dashboard__left_sidebar__menu-list-item-wrapper">
+              <div class="dashboard__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/home.svg" alt="dashboard" class="dashboard__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="dashboard__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/dashboard.html')">Dashboard</div>
+            </div>
+            <div class="dashboard__left_sidebar__menu-list-item-wrapper">
+              <div class="dashboard__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/profile.svg" alt="dashboard" class="dashboard__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="dashboard__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/profile.html')">Profile</div>
+            </div>
+            <div class="dashboard__left_sidebar__menu-list-item-wrapper">
+              <div class="dashboard__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/info.svg" alt="dashboard" class="dashboard__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="dashboard__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/about-us.html')">About us</div>
+            </div>
+            <div class="dashboard__left_sidebar__menu-list-item-wrapper">
+              <div class="dashboard__left_sidebar__menu-list-item-icon-wrapper">
+                <img src="../assets/help.svg" alt="dashboard" class="dashboard__left_sidebar__menu-list-item-icon" />
+              </div>
+              <div class="dashboard__left_sidebar__menu-list-item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/help.html')">Help</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="menu-button" aria-label="Open menu" onclick="toggleMenu()">
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+        <span class="menu-button__line"></span>
+      </button>
+
+      <div class="menu-modal" id="menuModal">
+        <div class="dashboard__modal__logo">
+          <h1 class="dashboard__modal__logo-title">MOX MOVIES</h1>
+        </div>
+        <div class="dashboard__modal__line">
+          <img src="../assets/line.svg" alt="line" class="dashboard__modal__line" />
+        </div>
+        <nav class="menu-modal__content">
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/dashboard.html')">Dashboard</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/profile.html')">Profile</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/about-us.html')">About us</a>
+          <a href="#" class="menu-modal__item" onclick="window.location.replace('http://localhost/MoX-Project/src/view/help.html')">Help</a>
+        </nav>
+      </div>
+
+      <div class="dashboard__center">
+        <div class="dashboard__search-wrapper">
+          <img src="../assets/search.svg" alt="search" class="dashboard__search-icon" />
+          <form id="search-form" class="dashboard__search">
+            <input type="search" id="search-input" name="search" required placeholder="Type here..." class="dashboard__search" />
+          </form>
+        </div>
+        <div class="dashboard__center__statistics">
+          <button class="statistics__button" id="show-statistics-button" onclick="window.location.replace('http://localhost/MoX-Project/src/view/statistics.html')">
+            Generate statistics
+          </button>
+        </div>
+        <div class="dashboard__center-content">
+          <div id="spinner" class="spinner" style="display: none"></div>
+        </div>
+        <div class="dashboard__center__filters">
+          <button class="filters__button" id="show-filters-button">Filters</button>
+        </div>
+      </div>
+      <div class="dashboard__right_sidebar">
+        <div class="sidebar__filters">
+          <h2 class="filters__title">Shows filters</h2>
+          <div class="filters__group">
+            <h3 class="group__title">Streaming service</h3>
+            <select class="group__select" id="streaming-service-select">
+              <option value="both">Both</option>
+              <option value="Netflix">Netflix</option>
+              <option value="Disney">Disney</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <h3 class="group__title">Genres</h3>
+            <select class="group__select" id="genre-select">
+              <option value="user_favorite">User favorite</option>
+              <option value="action">Action</option>
+              <option value="fantasy">Fantasy</option>
+              <option value="comedy">Comedy</option>
+              <option value="horror">Horror</option>
+              <option value="romance">Romance</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <h3 class="group__title">Year</h3>
+            <select class="group__select" id="year-select">
+              <option value="0">All years</option>
+              <option value="2020,2021">2020-2021</option>
+              <option value="2010.2019">2010-2019</option>
+              <option value="2000,2009">2000-2009</option>
+              <option value="1990,1999">1990-1999</option>
+              <option value="1950,1989">1950-1989</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <h3 class="group__title">Type</h3>
+            <select class="group__select" id="type-select">
+              <option value="both">Both</option>
+              <option value="Movie">Movies</option>
+              <option value="TV Show">TV Shows</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <h3 class="group__title">Movie duration</h3>
+            <select class="group__select" id="duration-select">
+              <option value="0">All</option>
+              <option value="150+">150s+</option>
+              <option value="91,149">91-149s</option>
+              <option value="90-">90-</option>
+            </select>
+          </div>
+          <button type="submit" class="statistics__button" id="submit-button" style="width: 100%">Search</button>
+          <div class="dashboard__left_sidebar__line">
+            <img src="../assets/line.svg" alt="line" class="dashboard__left_sidebar__line" />
+          </div>
+          <h2 class="filters__title">Sorting Shows</h2>
+          <div class="filters__group">
+            <h3 class="group__title">Sort by</h3>
+            <select class="group__select" id="sort">
+              <option value="title">Title</option>
+              <option value="score">Score</option>
+            </select>
+          </div>
+          <div class="filters__group">
+            <h3 class="group__title">Order of Sorting</h3>
+            <select class="group__select" id="order">
+              <option value="desc">Descending</option>
+              <option value="asc">Ascending</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../scripts/movies.js"></script>
+    <script src="../scripts/dashboard.js"></script>
+    <!-- <script>
+      getFavouriteMovies();
+    </script> -->
+  </body>
+</html>

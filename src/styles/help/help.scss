@@ -1,0 +1,34 @@
+@use "../theme";
+@use "./help-left_sidebar";
+@use "./help-center";
+@use "./help-modal";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.help__background {
+  height: calc(100vh + 100px);
+  width: 100%;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: -1;
+}
+
+.help {
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

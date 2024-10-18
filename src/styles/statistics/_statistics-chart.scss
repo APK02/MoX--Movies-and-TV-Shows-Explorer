@@ -1,0 +1,13 @@
+@use "../theme";
+
+.statistics__container__item__image {
+  width: 300px;
+  height: 300px;
+  // object-fit: cover;
+  border-radius: 20px;
+
+  @media (max-width: 500px) {
+    width: 250px;
+    height: 250px;
+  }
+}

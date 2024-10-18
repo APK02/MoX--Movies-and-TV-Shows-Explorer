@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/statistics/statistics.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/statistics.js" defer></script>
+    <title>Statistics</title>
+  </head>
+  <body>
+    <div class="statistics">
+      <img src="../assets/background.png" alt="background" class="statistics__background" />
+      <div class="statistics__header">
+        <button class="statistics__header-back_button" onclick="window.location.replace('http://localhost/MoX-Project/src/view/dashboard.html')">Back</button>
+        <h1 class="statistics__header-title">MOX MOVIES</h1>
+      </div>
+      <div class="statistics__content">
+        <h1 class="statistics__title">Statistics</h1>
+        <div class="statistics__container">
+          <div class="statistics__container__item">
+            <div class="statistics__container__export-buttons">
+              <button class="statistics__container__export-button" id="statistics__container__export-CSV__button_chart" onclick="downloadCSV(1)">Export CSV</button>
+              <button class="statistics__container__export-button" id="statistics__container__export-WEBP__button_chart" onclick="downloadWebP(1)">Export WEBP</button>
+              <button class="statistics__container__export-button" id="statistics__container__export-SVG__button_chart" onclick="downloadSVG(1)">Export SVG</button>
+            </div>
+            <canvas id="myChart1" class="statistics__container__item__image" style="height: 309px"></canvas>
+          </div>
+          <div class="statistics__container__item">
+            <div class="statistics__container__export-buttons">
+              <button class="statistics__container__export-button" id="statistics__container__export-CSV__button_lines" onclick="downloadCSV(2)">Export CSV</button>
+              <button class="statistics__container__export-button" id="statistics__container__export-WEBP__button_lines" onclick="downloadWebP(2)">Export WEBP</button>
+              <button class="statistics__container__export-button" id="statistics__container__export-SVG__button_lines" onclick="downloadSVG(2)">Export SVG</button>
+            </div>
+            <canvas id="myChart2" class="statistics__container__item__image"></canvas>
+          </div>
+          <div class="statistics__container__item">
+            <div class="statistics__container__export-buttons">
+              <button class="statistics__container__export-button" id="statistics__container__export-CSV__button_spiderweb" onclick="downloadCSV(3)">Export CSV</button>
+              <button class="statistics__container__export-button" id="statistics__container__export-WEBP__button_spiderweb" onclick="downloadWebP(3)">Export WEBP</button>
+              <button class="statistics__container__export-button" id="statistics__container__export-SVG__button_spiderweb" onclick="downloadSVG(3)">Export SVG</button>
+            </div>
+            <canvas id="myChart3" class="statistics__container__item__image"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
